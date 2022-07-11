@@ -41,6 +41,14 @@ public class PersonalDetailsPageElements extends CommonMethods {
 	@FindBy(id = "emp_dri_lice_exp_date")
 	public WebElement expDate;
 	
+	@FindBy(id = "top-menu-trigger")
+	public WebElement more;
+	
+	
+	@FindBy(xpath = "//span[text()='Dependents']")
+	public WebElement dependents;
+	
+	
 	
 	
 	
