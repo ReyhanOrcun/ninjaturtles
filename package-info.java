@@ -1,1 +1,1 @@
-package com.neotech.pages;
+package com.neotech.testbase;
