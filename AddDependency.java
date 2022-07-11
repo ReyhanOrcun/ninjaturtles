@@ -112,7 +112,35 @@ public class AddDependency extends CommonMethods {
 	public void i_am_able_to_see_message(String string) {
 
 	}
-
+@When("User enters Certificate No {string}")
+	public void user_enters_certificate_no(String CertificateNo) {
+	   
+		//click(addDependents.certificateNo);
+		
+		sendText(addDependents.certificateNo,  CertificateNo );
+		
+		wait(2);
+		
+	}
+	@When("User enters Date of registration {string}")
+	public void user_enters_date_of_registration(String RegistrationDate) {
+		
+		//click(addDependents.registrationDateField);
+		sendText(addDependents.registrationDateField, RegistrationDate );
+		
+		wait(2);
+	   
+	}
+	@When("User enters SAVE button")
+	public void user_enters_save_button() {
+		
+		click(addDependents.saveMarriageInfo);
+	    
+	}
+	@Then("Admin gets {string} message")
+	public void admin_gets_message(String string) {
+	    
+	}
 	
 
 }
