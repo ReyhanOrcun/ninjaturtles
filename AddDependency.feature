@@ -6,20 +6,16 @@ Feature: Add Dependency
   Background: 
     Given user is logged in with valid credentials
     And Admin navigates to Personal Details Page
-
-  @dependency1
-  Scenario: Navigate to Dependents Page
-    When User clicks more
+    And User clicks more
     And User Selects Dependents from drop down options
-    Then user should see Assigned Dependents page
+    And user should see Assigned Dependents page
+    
 
   @dependency2
   Scenario Outline: Add and Modify Dependents
-    Given User clicks more
-    And User Selects Dependents from drop down options
-    And user should see Assigned Dependents page
-    And Navigate ADD DEPENDENT Frame
-    When user enter name "<Name>"
+   
+   When  Navigate ADD DEPENDENT Frame
+    When user enters name "<Name>"
     And user selects Date of Birth "<DOB>"
     And user selects Relationship "<relationship>" from dropdown
     And user clicks save button
@@ -29,3 +25,14 @@ Feature: Add Dependency
       | Name     | DOB              | relationship |
       | Cin Ali  | Wed, 18 Mar 1987 | Child        |
       | Keloglan | Thu, 06 Mar 1952 | Father       |
+
+  @dependency3
+  Scenario Outline: Add Marriage Info
+    When User enters Certificate No "<CertificateNo>"
+    And User enters Date of registration "<RegistrationDate>"
+    And User enters SAVE button
+    Then Admin gets "succesfully saved" message
+      
+     Examples:  
+      | CertificateNo | RegistrationDate |
+      |          3456 | Wed, 15 Oct 2025 |
